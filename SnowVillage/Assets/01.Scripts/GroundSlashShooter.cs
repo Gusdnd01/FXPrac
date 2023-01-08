@@ -17,14 +17,14 @@ public class GroundSlashShooter : MonoBehaviour
     private GroundSlash groundSlashScripts;
 
     private void Awake() {
-        _anim = GetComponent<Animator>();
+        //_anim = GetComponent<Animator>();
     }
 
     public void Start(){
-        StartCoroutine(Fire());
+        //StartCoroutine(Fire());
     }
 
-    private void ShootProjectile(){
+    public void ShootProjectile(){
         Ray ray = cam.ViewportPointToRay(new Vector3(.5f,.5f,0));
         destination = ray.GetPoint(1000);
         InstantiateProjectile();
@@ -35,7 +35,7 @@ public class GroundSlashShooter : MonoBehaviour
 
         groundSlashScripts = projectileObj.GetComponent<GroundSlash>();
         RotateToDestination(projectileObj, destination, true);
-        projectileObj.GetComponent<Rigidbody>().velocity = transform.forward * groundSlashScripts.speed;
+        projectileObj.GetComponent<Rigidbody>().velocity = firePoint.forward * groundSlashScripts.speed;
     }
 
     private void RotateToDestination(GameObject obj, Vector3 dest, bool onlyY){
@@ -50,13 +50,13 @@ public class GroundSlashShooter : MonoBehaviour
         obj.transform.localRotation = Quaternion.Lerp(obj.transform.rotation, rotation, 1);
     }
 
-    private IEnumerator Fire(){
-        while(true){
-            yield return new WaitUntil(()=>Input.GetButtonDown("Fire1"));
-            _anim.SetTrigger("isAttack");
-            yield return new WaitForSeconds(0.5f);
-            ShootProjectile();
-            yield return new WaitForSeconds(fireRate);
-        }
-    }
+    // private IEnumerator Fire(){
+    //     while(true){
+    //         yield return new WaitUntil(()=>Input.GetButtonDown("Fire1"));
+    //         //_anim.SetTrigger("isAttack");
+    //         yield return new WaitForSeconds(0.5f);
+    //         ShootProjectile();
+    //         yield return new WaitForSeconds(fireRate);
+    //     }
+    // }
 }

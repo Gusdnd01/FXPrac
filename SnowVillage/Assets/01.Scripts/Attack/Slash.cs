@@ -9,27 +9,41 @@ public class Slash : MonoBehaviour
     private Transform _attackPosition;
     [SerializeField]
     private Animator anim;
-    private VisualEffect _slash;
+    public VisualEffect _slash;
+    public VisualEffect _doubleSlash;
+    //private GroundSlashShooter _shooter;
     private bool isAttack = false;
 
-    private void Awake() {
-        _slash = _attackPosition.GetComponentInChildren<VisualEffect>();
-    }
 
     private void Update(){
         if(Input.GetKeyDown(KeyCode.F) && !isAttack){
-            StartCoroutine(SlahsAttack(.5f));
+            StartCoroutine(SlahsAttack(.5f, _slash));
+            //_shooter.ShootProjectile();
             print("Attack!");
         }
     }
 
-    private IEnumerator SlahsAttack(float delay){
-        _slash.SendEvent("OnPlay");
-        _slash.transform.GetComponent<BoxCollider>().enabled = true;
+    public void DoubleSlash(){
+        StartCoroutine(DoubleSlashAttack(.5f, _doubleSlash));
+    }
+
+    public IEnumerator DoubleSlashAttack(float delay, VisualEffect slash){
+        slash.SendEvent("OnPlay");
+        slash.transform.GetComponent<BoxCollider>().enabled = true;
         anim.SetTrigger("Attack");
         isAttack = true;
         yield return new WaitForSeconds(delay);
         isAttack = false;
-        _slash.transform.GetComponent<BoxCollider>().enabled = false;
+        slash.transform.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    private IEnumerator SlahsAttack(float delay, VisualEffect slash){
+        slash.SendEvent("OnPlay");
+        slash.transform.GetComponent<BoxCollider>().enabled = true;
+        anim.SetTrigger("Attack");
+        isAttack = true;
+        yield return new WaitForSeconds(delay);
+        isAttack = false;
+        slash.transform.GetComponent<BoxCollider>().enabled = false;
     }
 }

@@ -31,7 +31,7 @@ public class GroundSlash : MonoBehaviour
         if(!stopped){
             RaycastHit hit;
             Vector3 distance = new Vector3(transform.position.x, transform.position.y+1,transform.position.z );
-            if(Physics.Raycast(distance, transform.TransformDirection(-Vector3.up), out hit, detectingDistance)){
+            if(Physics.Raycast(distance, transform.TransformDirection(-Vector3.up), out hit, detectingDistance,LayerMask.GetMask("Ground"))){
                 transform.position = new Vector3(transform.position.x, hit.point.y,transform.position.z);
             }
             else{
@@ -50,5 +50,11 @@ public class GroundSlash : MonoBehaviour
         }
 
         stopped = true;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Enemy")){
+            other.GetComponent<HitEffect>().OnHit();
+        }
     }
 }
