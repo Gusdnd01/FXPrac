@@ -30,7 +30,6 @@ public class Slash : MonoBehaviour
     public IEnumerator DoubleSlashAttack(float delay, VisualEffect slash){
         slash.SendEvent("OnPlay");
         slash.transform.GetComponent<BoxCollider>().enabled = true;
-        anim.SetTrigger("Attack");
         isAttack = true;
         yield return new WaitForSeconds(delay);
         isAttack = false;

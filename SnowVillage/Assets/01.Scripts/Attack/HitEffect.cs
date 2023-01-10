@@ -44,7 +44,7 @@ public class HitEffect : MonoBehaviour
         _colorAdjustments.active = true;
         _shadowMidtonesHighlights.active = true;
 
-        _multiChannelPerlin.m_AmplitudeGain = 20;
+        _multiChannelPerlin.m_AmplitudeGain = 10;
         yield return new WaitForSeconds(.3f);
         
         _multiChannelPerlin.m_AmplitudeGain = 0;
