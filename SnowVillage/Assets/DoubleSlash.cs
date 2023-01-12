@@ -13,4 +13,8 @@ public class DoubleSlash : MonoBehaviour
     public void Slash(){
         _slash.DoubleSlash();
     }
+
+    public void Sting(){
+        _slash.Sting();
+    }
 }
