@@ -29,9 +29,6 @@ public class HitEffect : MonoBehaviour
     }
 
     private void Start() {
-        _colorAdjustments.active = false;
-        _shadowMidtonesHighlights.active = false;
-
         _multiChannelPerlin = cam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
     }
 
@@ -41,14 +38,8 @@ public class HitEffect : MonoBehaviour
 
     private IEnumerator HitEffectRoutine(){
         _hitFX.Play();
-        _colorAdjustments.active = true;
-        _shadowMidtonesHighlights.active = true;
 
-        _multiChannelPerlin.m_AmplitudeGain = 10;
         yield return new WaitForSeconds(.3f);
         
-        _multiChannelPerlin.m_AmplitudeGain = 0;
-        _colorAdjustments.active = false;
-        _shadowMidtonesHighlights.active = false;
     }
 }
