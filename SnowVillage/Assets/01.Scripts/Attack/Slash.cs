@@ -12,6 +12,7 @@ public class Slash : MonoBehaviour
     public VisualEffect _slash;
     public VisualEffect _doubleSlash;
     public VisualEffect _sting;
+    public VisualEffect _groundCrash;
     //private GroundSlashShooter _shooter;
     private bool isAttack = false;
     private void Start() {
@@ -29,6 +30,9 @@ public class Slash : MonoBehaviour
     public void DoubleSlash(){
         StartCoroutine(DoubleSlashAttack(.5f, _doubleSlash));
     }
+    public void GroundCrash(){
+        StartCoroutine(GroundCrash(1.5f, _groundCrash));
+    }
 
     [SerializeField] CinemachineVirtualCamera cam;
     
@@ -39,6 +43,16 @@ public class Slash : MonoBehaviour
     }
 
     public IEnumerator StingAttack(float delay, VisualEffect slash){
+        slash.SendEvent("OnPlay");
+        slash.transform.GetComponent<BoxCollider>().enabled = true;
+        isAttack = true;
+        _multiChannelPerlin.m_AmplitudeGain = 10f;
+        yield return new WaitForSeconds(delay);
+        _multiChannelPerlin.m_AmplitudeGain = 0;
+        isAttack = false;
+        slash.transform.GetComponent<BoxCollider>().enabled = false;
+    }
+    public IEnumerator GroundCrash(float delay, VisualEffect slash){
         slash.SendEvent("OnPlay");
         slash.transform.GetComponent<BoxCollider>().enabled = true;
         isAttack = true;

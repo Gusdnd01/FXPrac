@@ -17,4 +17,8 @@ public class DoubleSlash : MonoBehaviour
     public void Sting(){
         _slash.Sting();
     }
+
+    public void Crash(){
+        _slash.GroundCrash();
+    }
 }
