@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class CamMovement : MonoBehaviour
 {
-    /*private float xRotation;
+    private float xRotation;
     private float yRotation;
 
     [SerializeField]
-    private Transform _player;
+    private GameObject _bulletObj;
+
+    [SerializeField]
+    private float _sensitivity;
 
     [Header("Input")]
     public string mouseX = "Mouse X";
     public string mouseY = "Mouse Y";
 
+    private void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void Update() {
         CamRotate();
+
+        if(Input.GetMouseButtonDown(0)){
+            GameObject bullet = Instantiate(_bulletObj, transform.position, Quaternion.identity);
+            bullet.GetComponent<BulletObj>().moveDir = transform.forward;
+        }
     }
 
     private void CamRotate(){
         float x = Input.GetAxis(mouseX);
         float y = Input.GetAxis(mouseY);
 
-        xRotation += x * 100;
-        yRotation += y * 100;
+        xRotation += x * _sensitivity;
+        yRotation += y * _sensitivity;
 
-        transform.rotation = Quaternion.Euler(transform.rotation.x,-xRotation, 0);
-        _player.rotation = Quaternion.Euler(yRotation,_player.rotation.y,0);
-    } */
+        transform.rotation = Quaternion.Euler(yRotation,-xRotation, 0);
+    }
 }
