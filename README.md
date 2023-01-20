@@ -6,12 +6,12 @@ FX 공부기록용
 
 # 이슈 링크
 
-##[SlasFX](https://github.com/Gusdnd01/FXPrac/issues/4)
+## [SlasFX](https://github.com/Gusdnd01/FXPrac/issues/4)
 
-##[SwordFX](https://github.com/Gusdnd01/FXPrac/issues/3)
+## [SwordFX](https://github.com/Gusdnd01/FXPrac/issues/3)
 
-##[BuffFX](https://github.com/Gusdnd01/FXPrac/issues/1)
+## [BuffFX](https://github.com/Gusdnd01/FXPrac/issues/1)
 
-##[SpearFX](https://github.com/Gusdnd01/FXPrac/issues/6)
+## [SpearFX](https://github.com/Gusdnd01/FXPrac/issues/6)
 
-##[GroundCrashFX](https://github.com/Gusdnd01/FXPrac/issues/2)
+## [GroundCrashFX](https://github.com/Gusdnd01/FXPrac/issues/2)
