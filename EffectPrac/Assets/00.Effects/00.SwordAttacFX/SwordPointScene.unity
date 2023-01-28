@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.312957, g: 0.29361355, b: 0.5140324, a: 1}
+  m_IndirectSpecularColor: {r: 0.3554689, g: 0.23421812, b: 0.45443344, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _swordSpawn: {fileID: 998438720}
   _swordFall: {fileID: 1049713082}
+  _swordPoint: {fileID: 1081458092}
 --- !u!1 &998438718
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,7 +671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081458090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.739, z: 1.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
