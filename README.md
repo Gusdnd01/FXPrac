@@ -2,6 +2,7 @@
 
 #### Shadow ball
 ### ![dhdh](https://user-images.githubusercontent.com/101326408/216782110-7afc2a34-2f38-43a9-a14e-0c79f3b60fb0.gif)
+#### Boom
 ### ![boom](https://media.discordapp.net/attachments/938719060496089168/1127780907584073748/landing.gif?width=273&height=273)
 
 # 이슈 링크
