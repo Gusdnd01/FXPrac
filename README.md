@@ -6,6 +6,8 @@
 ### ![boom](https://media.discordapp.net/attachments/938719060496089168/1127780907584073748/landing.gif?width=273&height=273)
 #### Slash
 ### ![slash](https://media.discordapp.net/attachments/1072219859208913007/1116801907005067264/FXG_Sword_Water.gif?width=411&height=261)
+#### Hit
+### ![](https://media.discordapp.net/attachments/1130309366357176343/1186971784327745638/G_hit_effect.gif?ex=6595309e&is=6582bb9e&hm=55ab61c70d786f5e91616b72e4a1e45eb3c530f6fdffd236063f0806facafaa1&=)
 
 # 이슈 링크
 
